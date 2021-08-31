@@ -62,12 +62,12 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: First I tried to add a new toy and found a 500 server error. Then I checked the routes.rb to makes sure the create route existed. Then I checked the create method in the ToysController. There, I found that Toy was pluralized on accident. So, I changed it. I tested again, and it worked this time. 
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: I clicked the like button to see what error I would get. I wasn't sure what this error meant exactly so I added a byebug. I checked to see what the toy was in the update function and when I clicked the button it was correct. So, I knew that wasn't the problem. Therefore, the problem must be the json this is trying to read from, which made me realize that no json is being returned, which makes sense as to why the error was with the json. After adding the return, it worked.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: I checked to see what error it was and saw it was a 404, which means that it was not found. I saw that the destroy function existed and looked right, so I checked the routes.rb to make sure there was a route for it. I found that there wasn't, so I added the route. I added it to the routes, and it worked. 
